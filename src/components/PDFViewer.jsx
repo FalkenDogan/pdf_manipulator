@@ -261,10 +261,9 @@ export default function PDFViewer() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {pages.length === 0 ? (
           <div className="space-y-6">
-            <LandingHero />
-            <div className="max-w-2xl mx-auto">
+            <LandingHero>
               <FileUpload onFileSelect={handleFileSelect} />
-            </div>
+            </LandingHero>
             <Footer />
           </div>
         ) : (

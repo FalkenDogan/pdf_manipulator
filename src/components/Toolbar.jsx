@@ -12,9 +12,10 @@ export default function Toolbar({
   return (
     <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">PDF Manipülatörü</h1>
+        <div className="grid grid-cols-3 items-center">
+          <div></div>
+          <div className="justify-self-center text-center">
+            <h1 className="text-2xl font-bold text-gray-900">PDF Manipulator</h1>
             {isLoaded && (
               <p className="text-sm text-gray-600 mt-1">
                 {selectedCount > 0 
@@ -24,7 +25,7 @@ export default function Toolbar({
             )}
           </div>
           
-          <div className="flex gap-2">
+          <div className="justify-self-end flex gap-2">
             {isLoaded && (
               <button
                 onClick={onAddPDF}
