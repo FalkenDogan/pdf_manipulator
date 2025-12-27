@@ -35,7 +35,7 @@ export default function FileUpload({ onFileSelect }) {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
-      className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer transition-colors"
+      className="border-2 border-dashed border-gray-300 rounded-2xl p-10 text-center cursor-pointer transition-colors bg-white shadow-sm hover:shadow-md"
       onClick={() => inputRef.current?.click()}
     >
       <svg
@@ -51,11 +51,14 @@ export default function FileUpload({ onFileSelect }) {
           strokeLinejoin="round"
         />
       </svg>
-      <p className="text-lg font-medium text-gray-700 mb-1">
+      <p className="text-lg font-semibold text-gray-800 mb-1">
         PDF dosyasını buraya sürükleyin veya tıklayın
       </p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 mb-2">
         Tek bir PDF dosyası seçebilirsiniz
+      </p>
+      <p className="text-sm text-gray-500">
+        Drag & drop a PDF here or click to select.
       </p>
       <input
         ref={inputRef}

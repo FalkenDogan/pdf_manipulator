@@ -16,6 +16,8 @@ import {
 import PageThumbnail from './PageThumbnail';
 import Toolbar from './Toolbar';
 import FileUpload from './FileUpload';
+import LandingHero from './LandingHero';
+import Footer from './Footer';
 import {
   loadPDF,
   renderAllThumbnails,
@@ -258,8 +260,12 @@ export default function PDFViewer() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {pages.length === 0 ? (
-          <div className="max-w-2xl mx-auto">
-            <FileUpload onFileSelect={handleFileSelect} />
+          <div className="space-y-6">
+            <LandingHero />
+            <div className="max-w-2xl mx-auto">
+              <FileUpload onFileSelect={handleFileSelect} />
+            </div>
+            <Footer />
           </div>
         ) : (
           <div>
@@ -298,6 +304,7 @@ export default function PDFViewer() {
                 </SortableContext>
               </DndContext>
             )}
+            <Footer />
           </div>
         )}
       </main>

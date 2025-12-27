@@ -72,3 +72,9 @@ Open: `https://<username>.github.io/pdf_manipulator/`
 3. Select pages using the round button on each thumbnail
 4. Delete unwanted pages
 5. Use “Save All” to download the entire edited PDF, or “Download Selected” to export only selected pages
+
+## License / Lisans
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
