@@ -1,64 +1,74 @@
-# PDF Manipülatörü
+# PDF Manipulator
 
-Tarayıcı tabanlı, istemci-tarafından çalışan PDF düzenleme uygulaması.
+A browser-only, client-side PDF editing app. Built with React + Vite, renders thumbnails with pdf.js and manipulates pages with pdf-lib. Designed to run entirely on GitHub Pages — no server required.
 
-## 🚀 Özellikler
+## Features
 
-✅ PDF dosyası yükleme  
-✅ Sayfaları küçük resimler olarak görüntüleme (pdf.js)  
-✅ **Sürükle-bırak ile sayfa sıralama**  
-✅ Sayfaları seçme ve silme  
-✅ Yeni PDF ekleme (birleştirme)  
-✅ Seçilmiş sayfaları yeni PDF olarak indirme  
-✅ Tüm PDF'i kaydetme  
+- Upload single or multiple PDFs
+- Render each page as a thumbnail (pdf.js)
+- Drag-and-drop page reordering (dnd-kit)
+- Click to select pages; delete selected pages
+- Merge another PDF into the current one
+- Download only selected pages as a new PDF (pdf-lib)
+- Save and download the full, edited PDF
 
-## 📦 Kurulum
+## Setup
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 🏗️ Build
+Local dev server runs at http://localhost:5173.
+
+## Build
 
 ```bash
 npm run build
 ```
 
-## 🌐 GitHub Pages Deployment
+The production build is emitted to the `dist/` folder.
 
-### 1. GitHub Repository Oluştur
+## GitHub Pages Deployment
+
+This repo includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and deploys to GitHub Pages.
+
+Important: `vite.config.js` sets `base: '/pdf_manipulator/'` so assets resolve correctly at `https://<username>.github.io/pdf_manipulator/`.
+
+### 1) Push to GitHub (main branch)
+
 ```bash
 git init
 git add .
-git commit -m "Initial commit"
+git commit -m "Configure GitHub Pages deployment"
 git branch -M main
-git remote add origin https://github.com/KULLANICI_ADIN/pdf_manipulator.git
+git remote add origin https://github.com/<username>/pdf_manipulator.git
 git push -u origin main
 ```
 
-### 2. GitHub Pages Ayarları
-1. GitHub repo'na git
-2. **Settings** → **Pages**
-3. **Source**: GitHub Actions seç
-4. Commit ve push yap - otomatik deploy olacak
+### 2) Enable Pages via Actions
 
-### 3. Erişim
-Uygulama: `https://KULLANICI_ADIN.github.io/pdf_manipulator/`
+- In GitHub → Repository → Settings → Pages
+- Source: select “GitHub Actions”
+- On push to `main`, the workflow runs and publishes the site
 
-## 🛠️ Teknolojiler
+### 3) Access the site
 
-- React.js
+Open: `https://<username>.github.io/pdf_manipulator/`
+
+## Tech Stack
+
+- React
 - Vite
 - Tailwind CSS
-- pdf.js (Rendering)
-- pdf-lib (Manipulation)
-- dnd-kit (Drag & Drop)
+- pdf.js (rendering)
+- pdf-lib (manipulation)
+- dnd-kit (drag & drop)
 
-## 📝 Kullanım
+## Usage
 
-1. PDF dosyasını yükle
-2. Sayfaları sürükleyerek sırala
-3. Sayfaları seç (sağ alttaki + butonu)
-4. İstemediğin sayfaları sil
-5. "Tümünü Kaydet" veya "Seçilenleri İndir"
+1. Upload a PDF
+2. Reorder pages via drag-and-drop
+3. Select pages using the round button on each thumbnail
+4. Delete unwanted pages
+5. Use “Save All” to download the entire edited PDF, or “Download Selected” to export only selected pages
