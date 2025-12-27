@@ -49,10 +49,6 @@ export default function LandingHero({ children }) {
             </ul>
           </div>
         </div>
-
-        <div className="mt-6 text-xs sm:text-sm opacity-90 text-center">
-          Geliştiren / Developed by <span className="font-semibold">Mustafa Doğan</span>
-        </div>
       </div>
     </section>
   );
